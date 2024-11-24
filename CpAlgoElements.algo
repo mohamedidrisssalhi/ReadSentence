@@ -1,0 +1,25 @@
+ALGORITHM readSentence
+VAR
+    vowels, words, char:= INTEGER;
+    sentence:= STRING;
+BEGIN
+    char:= 0;
+    words:= 1;
+    vowels:= 0;
+    write("type the sentence.")
+    read(sentence)
+    REPEAT
+        // check words n space
+        IF (sentence[char]=" ") THEN
+            words:= words+1;
+        END_IF
+        // check vowels
+        IF (sentence[char]in["a","e","i","o","u","y","A","E","I","O","U","Y"]) THEN
+            vowels:= vowels+1;
+        END_IF
+        char:= char+1;
+    UNTIL (sentence[char]=".")
+    write("the number of characters is", char+1)
+    write("The number of words is", words)
+    write("The number of vowels is", vowels)
+END
